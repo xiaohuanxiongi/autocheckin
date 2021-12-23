@@ -1,0 +1,14 @@
+{
+  "name": "autocheckin",
+  "version": "1.0.0",
+  "description": "自动签到",
+  "main": "./src/index",
+  "scripts": {
+    "start": "node ./src/index"
+  },
+  "author": "xiaohuanxiong",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.24.0"
+  }
+}
