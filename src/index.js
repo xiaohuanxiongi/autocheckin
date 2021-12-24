@@ -5,7 +5,10 @@ const { COOKIE } = require('../config');
 if (!COOKIE) {
   console.log(`获取不到cookie,请检查设置`)
 } else {
+  console.log(COOKIE)
   service.checkIn(COOKIE).then(() => {
     service.lottery(COOKIE)
-  });
+  }).catch(err => {
+    console.log(err)
+  })
 }

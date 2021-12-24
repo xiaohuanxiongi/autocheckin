@@ -28,7 +28,11 @@ service.interceptors.response.use(
   response => {
     const res = response.data;
     //  成功
-    console.log('请求成功', res)
+    if (res.err_no === 0) {
+      return Promise.resolve(res.data)
+    } else {
+      return Promise.reject(res)
+    }
   }, error => {
     console.log('请求失败', error)
   }
