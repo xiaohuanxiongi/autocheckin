@@ -1,4 +1,4 @@
-name: 自动签到-掘金
+name: 自动签到-百度贴吧
 on:
   schedule:
     # `分 时 天 月 周` 时按照标准时间 北京时间=标准时间+8 18表示北京时间早上2点
@@ -32,6 +32,6 @@ jobs:
       # 运行脚本
       - name: 运行脚本
         run: |
-          COOKIE='${{ secrets.COOKIE }}' npm start
+          TIEBA='${{ secrets.TIEBA }}' npm start-tieba
         env:
           CI: true
