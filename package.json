@@ -4,8 +4,8 @@
   "description": "自动签到",
   "main": "./src/index",
   "scripts": {
-    "start-juejin": "node ./src/juejin",
-    "start-tieba": "node ./src/tieba"
+    "juejin": "node ./src/juejin",
+    "tieba": "node ./src/tieba"
   },
   "author": "xiaohuanxiong",
   "license": "ISC",
