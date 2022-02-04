@@ -1,11 +1,12 @@
 //  自动发送邮件
 const nodemailer = require('nodemailer');
 const dayjs = require('dayjs');
-const { EMAIL } = require('../config');
+const { EMAIL, JUEJIN } = require('../config');
 
 const time = dayjs().format('YYYY-MM-DD')
 
 function sendEmail (status) {
+  console.log(EMAIL, JUEJIN)
   if (EMAIL) {
     const data = {
       email:'530785139@qq.com',
