@@ -26,7 +26,7 @@ function sendEmail (status) {
     let mailOptions = {
       from: '<530785139@qq.com>', // 发送者昵称和地址
       to: data.email, // 接收者的邮箱地址
-      subject: '签到成功', // 邮件主题
+      subject: `${status ? '签到成功' : '签到失败'}`, // 邮件主题
       html: data.content
     };
     //发送邮件
@@ -34,7 +34,7 @@ function sendEmail (status) {
       if (error) {
         return console.log(error);
       }
-      console.log('邮件发送成功 ID：', info.messageId);
+      console.log('邮件发送成功');
     });
   } else {
     console.log(`没有设置邮件授权码`);
