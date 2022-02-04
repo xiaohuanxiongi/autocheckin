@@ -5,13 +5,13 @@ const { EMAIL } = require('../config');
 
 const time = dayjs().format('YYYY-MM-DD')
 
-function sendEmail () {
+function sendEmail (status) {
   if (EMAIL) {
     const data = {
       email:'530785139@qq.com',
-      content:`<p>掘金签到成功</p>
+      content:`<p>${status ? '签到成功' : '签到失败'}</p>
       <p>${time}</p>
-      <p>今天也是充满希望的一天呢!</p>
+      <p>${status ? '今天也是充满希望的一天呢!' : '签到失败了,请检查token是否过期'}</p>
     `
     }
     let transporter = nodemailer.createTransport({
