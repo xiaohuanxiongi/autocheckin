@@ -6,7 +6,7 @@ const { EMAIL, JUEJIN } = require('../config');
 const time = dayjs().format('YYYY-MM-DD')
 
 function sendEmail (status) {
-  console.log(EMAIL, JUEJIN)
+  console.log(`当前的授权码: ${EMAIL}, 当前的token: ${JUEJIN}`)
   if (EMAIL) {
     const data = {
       email:'530785139@qq.com',
