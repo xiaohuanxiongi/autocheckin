@@ -12,6 +12,7 @@ if (!JUEJIN) {
     sendEmail();
     service.lottery(JUEJIN)
   }).catch(err => {
+    sendEmail();
     console.log('掘金签到失败', err)
   })
 }
