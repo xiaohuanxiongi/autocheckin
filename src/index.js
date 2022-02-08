@@ -5,7 +5,7 @@ const sendEmail  = require('./email');
 //  签到成功自动抽奖一次(免费的)
 // console.log(process.env)
 
-sendEmail();
+sendEmail(true);
 // if (!COOKIE && !BaiDu) {
 //   console.log(`获取不到cookie,请检查设置`)
 // } else {
