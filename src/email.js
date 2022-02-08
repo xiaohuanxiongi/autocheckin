@@ -11,7 +11,9 @@ let msg = `今天也是充满希望的一天呢!`;
 function sendEmail (status) {
   service.ylService().catch(res => {
     msg = res;
+    console.log('msg:', msg, 'res:', res)
     if (EMAIL) {
+      console.log(`进来发邮件了`)
       //  邮件的一些基本信息.
       const data = {
         service: `QQ`,
