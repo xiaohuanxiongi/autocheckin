@@ -33,7 +33,7 @@ function sendEmail (status) {
         }
       });
       let mailOptions = {
-        from: `<${data.email}>`, // 发送者昵称和地址
+        from: `香辣脆小浣熊<${data.email}>`, // 发送者昵称和地址
         to: data.email, // 接收者的邮箱地址
         subject: `${status ? '签到成功' : '签到失败'}`, // 邮件主题
         html: data.content

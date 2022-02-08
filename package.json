@@ -1,12 +1,11 @@
 {
   "name": "autocheckin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "自动签到",
   "main": "./src/index",
   "scripts": {
     "juejin": "node ./src/juejin",
-    "tieba": "node ./src/tieba",
-    "email": "node ./src/index"
+    "tieba": "node ./src/tieba"
   },
   "author": "xiaohuanxiong",
   "license": "ISC",
