@@ -1,24 +1,27 @@
 const service = require('../service');
 const { COOKIE, BaiDu } = require('../config');
+const sendEmail  = require('./email');
 
 //  签到成功自动抽奖一次(免费的)
 // console.log(process.env)
-if (!COOKIE && !BaiDu) {
-  console.log(`获取不到cookie,请检查设置`)
-} else {
-  //  掘金签到
-  service.checkIn(COOKIE).then(() => {
-    service.lottery(COOKIE)
-  }).catch(err => {
-    console.log('掘金签到失败', err)
-  })
-  //  百度贴吧签到
-  service.checkInBaiDu(BaiDu).then(() => {
-    console.log(`百度贴吧签到成功`)
-  }).catch(err => {
-    console.log(`贴吧签到失败`, err)
-  })
-}
+
+sendEmail();
+// if (!COOKIE && !BaiDu) {
+//   console.log(`获取不到cookie,请检查设置`)
+// } else {
+//   //  掘金签到
+//   service.checkIn(COOKIE).then(() => {
+//     service.lottery(COOKIE)
+//   }).catch(err => {
+//     console.log('掘金签到失败', err)
+//   })
+//   //  百度贴吧签到
+//   service.checkInBaiDu(BaiDu).then(() => {
+//     console.log(`百度贴吧签到成功`)
+//   }).catch(err => {
+//     console.log(`贴吧签到失败`, err)
+//   })
+// }
 
 /**
  * 计算价格
