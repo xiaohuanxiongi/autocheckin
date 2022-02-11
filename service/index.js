@@ -1,7 +1,7 @@
 const axios = require('../utils/request');
 const { checkInApi, draw } = require('../api/juejin');
 const { onekeySignin } = require('../api/baidu');
-const { ylApi } = require('../api/common');
+const { ylApi, biliLive } = require('../api/common');
 const qs = require('qs');
 
 //  掘金签到
@@ -25,9 +25,15 @@ function ylService() {
   return axios.get(ylApi)
 }
 
+//  哔哩哔哩直播签到
+function biliLiveService(cookie) {
+  return axios.get(biliLive, { headers: { cookie } })
+}
+
 module.exports = {
   checkIn,
   lottery,
   checkInBaiDu,
-  ylService
+  ylService,
+  biliLiveService
 }

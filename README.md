@@ -1,10 +1,16 @@
-# 自动签到脚本
+# 自动签到脚本 - 基本操作
 
-1.  点击`settings > Secrets`
-2.  点击`New repository secret`
-3.  在`Name`输入`JUEJIN`或`TIEBA`
-4.  在`Value`输入从掘金或者贴吧获取到的`cookie`
-5.  点击`Actions`开启流
+1.  点击`settings > Secrets`;
+2.  点击`New repository secret`;
+3.  在`Name`输入`JUEJIN`或`TIEBA`;
+4.  在`Value`输入从掘金或者贴吧获取到的`cookie`;
+5.  点击`Actions`开启流;
+
+##  2022-02-08更新
+
+1.  新增bilibili直播签到;
+2.  新增`BILI`字段,从bilibili直播获取`cookie`;
+3.  操作流程与基本操作一致.只是名称修改为`BILI`;
 
 ##  2022-02-07更新
 

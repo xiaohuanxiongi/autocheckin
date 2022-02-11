@@ -10,7 +10,7 @@ let msg = `今天也是充满希望的一天呢!`;
 
 function sendEmail (status) {
   //  获取每日语录
-  service.ylService().then(res => {
+  service.ylService().catch(res => {
     msg = res;
   }).finally(err => {
     if (EMAIL) {

@@ -27,7 +27,7 @@ const header = {
     'Sec-Fetch-Site': 'same-origin',
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36',
     'X-Requested-With': 'XMLHttpRequest'
-  }
+  },
 }
 
 const service = axios.create({
@@ -36,7 +36,7 @@ const service = axios.create({
 
 //  请求拦截器
 service.interceptors.request.use(config => {
-  config.headers = Object.assign({}, header[config.name], config.headers)
+  config.headers = Object.assign({}, header[config.name], config.headers);
   return config;
 }, error => {
   return Promise.reject(error);
@@ -47,11 +47,11 @@ service.interceptors.response.use(
   response => {
     const res = response.data;
     //  成功
-    if (res.err_no === 0 || res.no === 0) {
+    //  err_no === 0 掘金
+    //  no === 0 百度
+    //  code === 1011040  哔哩哔哩直播
+    if (res.err_no === 0 || res.no === 0 || res.code === 0) {
       return Promise.resolve(res.data)
-    } else if (response.status === 200) {
-      //  用于判断语录是否正常返回,由于此接口可能会由于网络原因请求不到
-      return Promise.resolve(res)
     } else {
       return Promise.reject(res)
     }
