@@ -9,11 +9,11 @@ const time = dayjs().format('YYYY-MM-DD')
 let msg = `今天也是充满希望的一天呢!`;
 
 function sendEmail (status) {
-  service.ylService().catch(res => {
+  //  获取每日语录
+  service.ylService().then(res => {
     msg = res;
-    console.log('msg:', msg, 'res:', res)
+  }).finally(err => {
     if (EMAIL) {
-      console.log(`进来发邮件了`)
       //  邮件的一些基本信息.
       const data = {
         service: `QQ`,

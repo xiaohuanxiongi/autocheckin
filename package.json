@@ -5,7 +5,8 @@
   "main": "./src/index",
   "scripts": {
     "juejin": "node ./src/juejin",
-    "tieba": "node ./src/tieba"
+    "tieba": "node ./src/tieba",
+    "email": "node ./src/index"
   },
   "author": "xiaohuanxiong",
   "license": "ISC",

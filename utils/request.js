@@ -49,6 +49,9 @@ service.interceptors.response.use(
     //  成功
     if (res.err_no === 0 || res.no === 0) {
       return Promise.resolve(res.data)
+    } else if (response.status === 200) {
+      //  用于判断语录是否正常返回,由于此接口可能会由于网络原因请求不到
+      return Promise.resolve(res)
     } else {
       return Promise.reject(res)
     }
