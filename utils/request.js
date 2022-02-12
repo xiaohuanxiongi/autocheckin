@@ -41,6 +41,7 @@ const service = axios.create({
 //  请求拦截器
 service.interceptors.request.use(config => {
   config.headers = Object.assign({}, header[config.name], config.headers);
+  console.log(`请求的参数`, config)
   return config;
 }, error => {
   return Promise.reject(error);
@@ -49,6 +50,7 @@ service.interceptors.request.use(config => {
 //  响应拦截器
 service.interceptors.response.use(
   response => {
+    console.log(`请求成功了?`, response)
     const res = response.data;
     //  成功
     //  err_no === 0 掘金
