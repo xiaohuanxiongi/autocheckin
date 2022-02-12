@@ -28,6 +28,10 @@ const header = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36',
     'X-Requested-With': 'XMLHttpRequest'
   },
+  'bili': {
+    origin: 'https://live.bilibili.com',
+    referer: 'https://live.bilibili.com/',
+  }
 }
 
 const service = axios.create({

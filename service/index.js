@@ -27,7 +27,7 @@ function ylService() {
 
 //  哔哩哔哩直播签到
 function biliLiveService(cookie) {
-  return axios.get(biliLive, { headers: { cookie } })
+  return axios.get(biliLive, { headers: { cookie }, name: 'bili' })
 }
 
 module.exports = {
