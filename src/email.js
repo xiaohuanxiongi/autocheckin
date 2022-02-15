@@ -4,7 +4,8 @@ const nodemailer = require('nodemailer');
 const dayjs = require('dayjs');
 const { EMAIL } = require('../config');
 
-const time = dayjs().format('YYYY-MM-DD')
+const minutes = 480 * 60 * 1000;  //  国际时间和北京时间相差8小时,60 * 8 = 480分钟
+const time = dayjs(new Date().getTime() + minutes).format('YYYY-MM-DD');
 
 let msg = `今天也是充满希望的一天呢!`;
 

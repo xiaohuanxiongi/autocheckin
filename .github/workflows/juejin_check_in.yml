@@ -2,11 +2,11 @@ name: 自动签到-掘金
 on:
   schedule:
     # `分 时 天 月 周` 时按照标准时间 北京时间=标准时间+8 0表示北京时间早上8点
-    - cron: "0 0 * * *"
+    - cron: "0 18 * * *"
   # 这是用于测试本地提交后查看是否能正常运行action
-#  push:
-#    branches:
-#      - master
+  push:
+    branches:
+      - master
 jobs:
   check_in:
     runs-on: ubuntu-latest
