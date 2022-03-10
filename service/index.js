@@ -16,7 +16,7 @@ function lottery(cookie) {
 
 //  百度签到
 function checkInBaiDu(cookie) {
-  const params = { ie: 'utf-8', tbs: '0db5c8d315812f591640651930' };
+  const params = { ie: 'utf-8', tbs: 'd685b77739b613451646872782' };
   return axios.post(onekeySignin, qs.stringify(params), { headers: { cookie }, name: 'baidu' })
 }
 
