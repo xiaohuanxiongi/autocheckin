@@ -1,6 +1,6 @@
 const axios = require('../utils/request');
 const { checkInApi, draw } = require('../api/juejin');
-const { onekeySignin } = require('../api/baidu');
+const { getTbsUrl, onekeySignin } = require('../api/baidu');
 const { ylApi, biliLive } = require('../api/common');
 const qs = require('qs');
 
@@ -14,9 +14,12 @@ function lottery(cookie) {
   return axios.post(draw, {}, { headers: { cookie }, name: 'juejin' })
 }
 
+//  获取贴吧tbs
+function getTbs(cookie) {
+  return axios.get(getTbsUrl, { headers: { cookie }, name: 'baidu' })
+}
 //  百度签到
-function checkInBaiDu(cookie) {
-  const params = { ie: 'utf-8', tbs: 'd685b77739b613451646872782' };
+function checkInBaiDu(params, cookie) {
   return axios.post(onekeySignin, qs.stringify(params), { headers: { cookie }, name: 'baidu' })
 }
 
@@ -33,6 +36,7 @@ function biliLiveService(cookie) {
 module.exports = {
   checkIn,
   lottery,
+  getTbs,
   checkInBaiDu,
   ylService,
   biliLiveService

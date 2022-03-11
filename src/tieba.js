@@ -7,9 +7,12 @@ if (!TIEBA) {
   console.log(`获取不到cookie,请检查设置`)
 } else {
   //  百度贴吧签到
-  service.checkInBaiDu(TIEBA).then(() => {
-    console.log(`百度贴吧签到成功`)
-  }).catch(err => {
-    console.log(`贴吧签到失败`, err)
+  service.getTbs(TIEBA).then(res => {
+    const tbs = res.tbs;
+    service.checkInBaiDu({ tbs }, TIEBA).then(() => {
+      console.log(`百度贴吧签到成功`)
+    }).catch(err => {
+      console.log(`贴吧签到失败`, err)
+    })
   })
 }

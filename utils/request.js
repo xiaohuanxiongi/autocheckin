@@ -1,4 +1,5 @@
 const axios = require('axios');
+const { getTbsUrl } = require('../api/baidu');
 const qs = require('qs');
 
 const header = {
@@ -31,6 +32,8 @@ const header = {
   'bili': {}
 }
 
+const white = [getTbsUrl]
+
 const service = axios.create({
 
 });
@@ -53,6 +56,8 @@ service.interceptors.response.use(
     //  code === 1011040  哔哩哔哩直播
     if (res.err_no === 0 || res.no === 0 || res.code === 0) {
       return Promise.resolve(res.data)
+    } else if(white.includes(response.config.url)) {
+      return Promise.resolve(res)
     } else {
       return Promise.reject(res)
     }
