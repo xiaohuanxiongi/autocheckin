@@ -1,5 +1,5 @@
 const service = require('../service');
-const { JUEJIN, TIEBA, BILI } = require('../config');
+const { JUEJIN, TIEBA, BILI, QQ } = require('../config');
 const sendEmail  = require('./email');
 
 //  掘金
@@ -61,6 +61,7 @@ function bili() {
 }
 
 async function all() {
+  console.log(JUEJIN, TIEBA, BILI, QQ)
   Promise.all([juejin(), tieba(), bili() ]).then(res => {
     sendEmail(true, res);
   })
