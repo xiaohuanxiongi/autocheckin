@@ -67,7 +67,6 @@ function bili() {
 }
 
 async function all() {
-  console.log(JUEJIN, TIEBA, BILI, QQ, EMAIL);
   Promise.all([juejin(), tieba(), bili() ]).then(res => {
     sendEmail(true, res);
   })
