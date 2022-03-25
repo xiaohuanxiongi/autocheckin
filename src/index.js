@@ -10,14 +10,16 @@ function juejin() {
       service.checkIn(JUEJIN).then(_ => {
         service.lottery(JUEJIN)
         text = '签到成功';
+        resolve(`掘金签到：${text}`);
       }).catch(err => {
         text = '签到失败';
-        console.log('掘金签到失败：', err)
+        console.log('掘金签到失败：', err);
+        resolve(`掘金签到：${text}`);
       })
     } else {
       text = '未设置cookie';
+      resolve(`掘金签到：${text}`);
     }
-    resolve(`掘金签到：${text}`);
   })
 }
 
@@ -30,15 +32,17 @@ function tieba() {
         const tbs = res.tbs;
         service.checkInBaiDu({ tbs }, TIEBA).then(() => {
           text = '签到成功';
+          resolve(`百度贴吧签到：${text}`);
         }).catch(err => {
           text = '签到失败';
-          console.log(`贴吧签到失败`, err)
+          console.log(`贴吧签到失败`, err);
+          resolve(`百度贴吧签到：${text}`);
         })
       })
     } else {
       text = '未设置cookie';
+      resolve(`百度贴吧签到：${text}`);
     }
-    resolve(`百度贴吧签到：${text}`);
   })
 }
 
@@ -49,14 +53,16 @@ function bili() {
     if (BILI) {
       service.biliLiveService(BILI).then((res) => {
         text = '签到成功';
+        resolve(`哔哩哔哩签到：${text}`);
       }).catch(err => {
         text = '签到失败';
-        console.log(`bili直播签到失败: `, err)
+        console.log(`bili直播签到失败: `, err);
+        resolve(`哔哩哔哩签到：${text}`);
       })
     } else {
       text = '未设置cookie';
+      resolve(`哔哩哔哩签到：${text}`);
     }
-    resolve(`哔哩哔哩签到：${text}`);
   })
 }
 
