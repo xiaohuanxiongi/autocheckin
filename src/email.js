@@ -2,25 +2,28 @@
 const service = require('../service');
 const nodemailer = require('nodemailer');
 const dayjs = require('dayjs');
-const { EMAIL } = require('../config');
+const { QQ, EMAIL } = require('../config');
 
 const minutes = 480 * 60 * 1000;  //  国际时间和北京时间相差8小时,60 * 8 = 480分钟
 const time = dayjs(new Date().getTime() + minutes).format('YYYY-MM-DD HH:mm:ss');
 
 let msg = `今天也是充满希望的一天呢!`;
 
-function sendEmail (status) {
+function sendEmail (status, text) {
   //  获取每日语录
   service.ylService().catch(res => {
     msg = res;
   }).finally(err => {
     if (EMAIL) {
+      //  生成模板
+      const template = `${text.map(v => `<p>${v}</p>`).join('') }`
       //  邮件的一些基本信息.
       const data = {
         service: `QQ`,
-        email:'530785139@qq.com',
+        email:`${QQ}@qq.com`,
         content:`<p>${status ? '签到成功' : '签到失败'}</p>
       <p>${time}</p>
+      ${template}
       <p>${status ? msg : '签到失败了,请检查token是否过期'}</p>
     `
       }
