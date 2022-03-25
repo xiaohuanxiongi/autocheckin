@@ -36,6 +36,6 @@ jobs:
       # 运行脚本
       - name: 运行脚本
         run: |
-          EMAIL='${{ secrets.EMAIL }}' npm run all
+          QQ='${{ secrets.QQ }}' EMAIL='${{ secrets.EMAIL }}' npm run all
         env:
           CI: true
