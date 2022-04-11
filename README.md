@@ -1,3 +1,11 @@
+<div align="center">
+<h1 align="center">自动签到脚本</h1>
+
+[![GitHub stars](https://img.shields.io/github/stars/xiaohuanxiong0985/autocheckin?style=flat-square)](https://github.com/xiaohuanxiong0985/autocheckin/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/xiaohuanxiong0985/autocheckin?style=flat-square)](https://github.com/xiaohuanxiong0985/autocheckin/network)
+
+</div>
+
 # 自动签到脚本 - 基本操作
 
 1.  点击`settings > Secrets`;
