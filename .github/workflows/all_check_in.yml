@@ -1,4 +1,5 @@
 name: 自动签到-全部
+run: git config --global --add safe.directory /github/workspace
 on:
   schedule:
     # `分 时 天 月 周` 时按照标准时间 北京时间=标准时间+8 0表示北京时间早上8点
