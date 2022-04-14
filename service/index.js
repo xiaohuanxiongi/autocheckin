@@ -1,5 +1,5 @@
 const axios = require('../utils/request');
-const { checkInApi, draw } = require('../api/juejin');
+const { checkInApi, draw, big, lucky } = require('../api/juejin');
 const { getTbsUrl, onekeySignin } = require('../api/baidu');
 const { ylApi, biliLive } = require('../api/common');
 const qs = require('qs');
@@ -12,6 +12,16 @@ function checkIn(cookie) {
 //  掘金-抽奖一次
 function lottery(cookie) {
   return axios.post(draw, {}, { headers: { cookie }, name: 'juejin' })
+}
+
+//  掘金-获取获得大奖用户列表
+function getBigService(cookie) {
+  return axios.post(big, { page_no: 1, page_size: 5 }, { headers: { cookie }, name: 'juejin' });
+}
+
+//  掘金-粘福气
+function luckyService(id, cookie) {
+  return axios.post(lucky, { lottery_history_id: id }, { headers: { cookie }, name: 'juejin' });
 }
 
 //  获取贴吧tbs
@@ -36,6 +46,8 @@ function biliLiveService(cookie) {
 module.exports = {
   checkIn,
   lottery,
+  getBigService,
+  luckyService,
   getTbs,
   checkInBaiDu,
   ylService,

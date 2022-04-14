@@ -8,7 +8,11 @@ function juejin() {
     let text = '未签到';
     if(JUEJIN) {
       service.checkIn(JUEJIN).then(_ => {
-        service.lottery(JUEJIN)
+        service.lottery(JUEJIN);
+        service.getBigService(JUEJIN).then((res) => {
+          const id = res.lotteries[0]['user_id'];
+          service.luckyService(id, JUEJIN);
+        })
         text = '签到成功';
         resolve(`掘金签到：${text}`);
       }).catch(err => {
