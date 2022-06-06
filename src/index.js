@@ -71,7 +71,7 @@ function bili() {
 }
 
 async function all() {
-  Promise.all([juejin(), tieba()]).then(res => {
+  Promise.all([juejin(), tieba(), bili()]).then(res => {
     if (res.every((v) => v.code === 200)) {
       //  所有签到成功,则不发送邮件通知
     } else {
