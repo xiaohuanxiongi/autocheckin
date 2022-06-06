@@ -16,7 +16,7 @@ function sendEmail (status, text) {
   }).finally(err => {
     if (EMAIL) {
       //  生成模板
-      const template = `${text.map(v => `<p>${v}</p>`).join('') }`
+      const template = `${text.map(v => `<p>${v.msg}</p>`).join('') }`
       //  邮件的一些基本信息.
       const data = {
         service: `QQ`,
