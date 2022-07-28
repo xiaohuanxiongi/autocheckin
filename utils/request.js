@@ -63,6 +63,7 @@ service.interceptors.response.use(
     }
   }, error => {
     console.log('请求失败', error)
+    return Promise.reject(error)
   }
 );
 
