@@ -9,14 +9,14 @@ if (!JUEJIN) {
 } else {
   //  掘金签到
   service.checkIn(JUEJIN).then(() => {
-    sendEmail(true);
+    // sendEmail(true);
     service.lottery(JUEJIN);
     service.getBigService(JUEJIN).then((res) => {
       const id = res.lotteries[0]['user_id'];
       service.luckyService(id, JUEJIN);
     })
   }).catch(err => {
-    sendEmail(false);
+    sendEmail(false, [{ msg: '掘金签到失败' }]);
     console.log('掘金签到失败', err)
   })
 }

@@ -3,9 +3,9 @@ on:
   schedule:
     # `分 时 天 月 周` 时按照标准时间 北京时间=标准时间+8 0表示北京时间早上8点
     - cron: "0 18 * * *"
-  push:
-    branches:
-      - master
+#  push:
+#    branches:
+#      - master
 jobs:
   check_in:
     runs-on: ubuntu-latest
